@@ -28,6 +28,7 @@ for( let i=0;i<totCells;i++)
 }
 function winningCheck()
 {
+
     if(arr[0]*arr[1]*arr[2]==27||arr[0]*arr[1]*arr[2]==125)
     {
         if(arr[0]==3)
@@ -35,6 +36,7 @@ function winningCheck()
             // O wins
             
             document.querySelector(".output").innerHTML="<h3>  O wins</h3>";
+        
         }
         else
         {
@@ -43,6 +45,8 @@ function winningCheck()
             
         
         }
+
+        resetplay();
     }
     else if(arr[3]*arr[4]*arr[5]==27||arr[3]*arr[4]*arr[5]==125)
     {
@@ -155,6 +159,7 @@ function winningCheck()
             
             
         }
+
     }
         
 
@@ -162,4 +167,15 @@ function winningCheck()
 }
 //function winning check end
 
-
+// Reset button
+document.querySelector(".reset").addEventListener("click",resetplay);
+function resetplay(){
+    // alert('reset button pressed');
+    cur=0;
+  
+    for(let i=0;i<totCells;i++)
+    {
+        arr[i]=-1;
+        document.querySelectorAll(".cell")[i].innerHTML='';
+    }
+}
