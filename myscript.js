@@ -1,6 +1,7 @@
 // alert("linked")
 var cur=0;
 var arr=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
+var temp=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
 var totCells=document.querySelectorAll(".cell").length;
 for( let i=0;i<totCells;i++)
 {
@@ -12,11 +13,21 @@ for( let i=0;i<totCells;i++)
     {
         document.querySelectorAll(".cell")[i].innerHTML="O";
         arr[i]=3;
+        
+        // document.querySelector(".displayMoves").insertAdjacentElement()
+        text="<p> move "+(cur+1)+" on block "+i+" </p>";
+        temp[cur]=i;
+        document.querySelector(".displayMoves").insertAdjacentHTML("afterend",text);
         cur++;
     }
     else{
         document.querySelectorAll(".cell")[i].innerHTML="X";
         arr[i]=5;
+        
+
+        text="<p> move "+(cur)+" on block "+i+"</p>";
+        temp[cur]=i;
+        document.querySelector(".displayMoves").insertAdjacentHTML("afterend",text)
         cur++;
     }
     
