@@ -6,7 +6,8 @@ for( let i=0;i<totCells;i++)
 {
     document.querySelectorAll(".cell")[i].addEventListener("click",function()
     {
-
+    if(arr[i]==-1)
+    {
     if(cur%2==0)
     {
         document.querySelectorAll(".cell")[i].innerHTML="O";
@@ -22,6 +23,7 @@ for( let i=0;i<totCells;i++)
     if(cur>=5)
     {
         winningCheck();
+    }
     }
     }
     );
