@@ -15,7 +15,10 @@ for( let i=0;i<totCells;i++)
         arr[i]=3;
         
         // document.querySelector(".displayMoves").insertAdjacentElement()
-        text="<p> move "+(cur+1)+" on block "+i+" </p>";
+        text="<p> move "+(cur)+" on block "+i+" </p>";
+        text="<button class=move"+cur+" movebutton " +"/>" +text+"</button>";
+  
+
         temp[cur]=i;
         document.querySelector(".displayMoves").insertAdjacentHTML("afterend",text);
         cur++;
@@ -25,7 +28,8 @@ for( let i=0;i<totCells;i++)
         arr[i]=5;
         
 
-        text="<p> move "+(cur)+" on block "+i+"</p>";
+        text="<p> move "+(cur)+" on block "+i+" </p>";
+        text="<button class=move"+cur+" movebutton " +"/>" +text+"</button>";
         temp[cur]=i;
         document.querySelector(".displayMoves").insertAdjacentHTML("afterend",text)
         cur++;
@@ -193,4 +197,22 @@ function resetplay(){
     }
     document.querySelector(".output").innerHTML="";
         
+}
+
+// Revert back functionality
+for( let i=0;i<cur;i++)
+{
+    document.querySelectorAll(".movebutton")[i].addEventListener("click",function()
+    {
+   
+        document.querySelectorAll(".cell")[i].innerHTML="O";
+        arr[i]=3;
+        
+        // document.querySelector(".displayMoves").insertAdjacentElement()
+        text="<p> move "+(cur)+" on block "+i+" </p>";
+        text="<button class=move"+cur+" movebutton " +"/>" +text+"</button>";
+    }
+    
+    
+    );
 }
