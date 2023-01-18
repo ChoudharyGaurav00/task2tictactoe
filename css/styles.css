@@ -21,6 +21,7 @@ h1{
     justify-content: center;
 }
 .resetContainer{
+
     display: flex;
-    justify-self: center;
+    justify-content: center;
 }

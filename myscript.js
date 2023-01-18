@@ -46,7 +46,7 @@ function winningCheck()
         
         }
 
-        resetplay();
+        // resetplay();
     }
     else if(arr[3]*arr[4]*arr[5]==27||arr[3]*arr[4]*arr[5]==125)
     {
@@ -178,4 +178,6 @@ function resetplay(){
         arr[i]=-1;
         document.querySelectorAll(".cell")[i].innerHTML='';
     }
+    document.querySelector(".output").innerHTML="";
+        
 }
