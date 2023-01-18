@@ -2,8 +2,11 @@
 var cur=0;
 var arr=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
 var totCells=document.querySelectorAll(".cell").length;
-for( let i=0;i<totCells;i++){
-document.querySelectorAll(".cell")[i].addEventListener("click",function(){
+for( let i=0;i<totCells;i++)
+{
+    document.querySelectorAll(".cell")[i].addEventListener("click",function()
+    {
+
     if(cur%2==0)
     {
         document.querySelectorAll(".cell")[i].innerHTML="O";
@@ -20,10 +23,11 @@ document.querySelectorAll(".cell")[i].addEventListener("click",function(){
     {
         winningCheck();
     }
-
-
-});
-function winningCheck(){
+    }
+    );
+}
+function winningCheck()
+{
     if(arr[0]*arr[1]*arr[2]==27||arr[0]*arr[1]*arr[2]==125)
     {
         if(arr[0]==3)
@@ -152,11 +156,10 @@ function winningCheck(){
             
         }
     }
-    
+        
 
     
-}//function winning check end
-
-
-
 }
+//function winning check end
+
+
