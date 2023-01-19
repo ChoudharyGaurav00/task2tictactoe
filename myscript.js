@@ -22,7 +22,7 @@ for( let i=0;i<totCells;i++)
         
 
         temp[cur]=i;
-        document.querySelector(".displayMoves").insertAdjacentHTML("afterend",text);
+        document.querySelector(".displayMoves").insertAdjacentHTML("beforeend",text);
         //button created
         tempclass=".move"+cur
         document.querySelector(tempclass).addEventListener("click",function()
@@ -40,7 +40,7 @@ for( let i=0;i<totCells;i++)
         text="<p> move "+(cur)+" on block "+i+" </p>";
         text="<button class=move"+cur+" movebutton " +"/>" +text+"</button>";
         temp[cur]=i;
-        document.querySelector(".displayMoves").insertAdjacentHTML("afterend",text)
+        document.querySelector(".displayMoves").insertAdjacentHTML("beforeend",text)
         //button created
         tempclass=".move"+cur
         document.querySelector(tempclass).addEventListener("click",function()
@@ -211,7 +211,7 @@ function resetplay(){
         document.querySelectorAll(".cell")[i].innerHTML='';
     }
     document.querySelector(".output").innerHTML="";
-        
+    document.querySelector(".displayMoves").innerHTML="";    
 }
 
 // Revert back functionality
