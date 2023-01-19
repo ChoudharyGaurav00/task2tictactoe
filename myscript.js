@@ -1,4 +1,3 @@
-// alert("linked")
 var cur=0;
 var arr=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
 var temp=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
@@ -35,6 +34,7 @@ for( let i=0;i<totCells;i++)
                
              
             //reseting array
+            cur=tempptr+1;
             for(let j=tempptr+1;j<9;j++)
             {
                 temp[j]=-1;
@@ -105,6 +105,7 @@ for( let i=0;i<totCells;i++)
                
              //extracting block number
              //resetting array
+             cur=tempptr+1;
              for(let j=tempptr+1;j<9;j++)
              {
                  temp[j]=-1;
@@ -145,35 +146,6 @@ for( let i=0;i<totCells;i++)
                    
             }
 
-
-
-
-
-
-            /*
-            //reset back to previous moves
-            let tempptr=tempclass[tempclass.length-1];
-            tempptr=Number(tempptr);
-
-            
-            // 
-
-             for(let i=tempptr+1;i<9;i++)
-             {
-                let target=".move"+i;
-                document.querySelector(target).innerHTML="";
-                
-                // document.querySelectorAll(".cell")[tempBlock].innerHTML="";
-                //extracting block number
-                
-                let tempBlock=document.querySelector(target).textContent;
-                // alert(tempBlock);
-                tempBlock=tempBlock[tempBlock.length-2];
-                // alert(tempBlock);
-                // tempBlock=Number(tempBlock);
-                // document.querySelectorAll(".cell")[tempBlock].innerHTML="";
-            }
-            */
         });
         
         cur++;
