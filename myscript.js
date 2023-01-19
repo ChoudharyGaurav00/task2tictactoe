@@ -33,8 +33,28 @@ for( let i=0;i<totCells;i++)
              let tempptr=tempclass[tempclass.length-1];
              tempptr=Number(tempptr);
                
-             //extracting block number
              
+            //reseting array
+            for(let j=tempptr+1;j<9;j++)
+            {
+                temp[j]=-1;
+            }             
+            for(let k=0;k<9;k++)
+            {
+                arr[k]=-1;
+            }
+            for(let k=0;k<=tempptr;k++)
+            {
+                if(k%2==0)
+                {
+                arr[temp[k]]=3;
+                }
+                else
+                {
+                arr[temp[k]]=5;
+                }
+            }
+            // 
            
              for(let i=tempptr+1;i<9;i++)
              {
@@ -44,7 +64,7 @@ for( let i=0;i<totCells;i++)
                 let tempBlock=document.querySelector(target).textContent;
                 tempBlock=tempBlock[tempBlock.length-2];
                 tempBlock=Number(tempBlock);
-                alert(tempBlock);
+                // alert(tempBlock);
                 document.querySelectorAll(".cell")[tempBlock].innerHTML="";
                 
                 
@@ -84,6 +104,26 @@ for( let i=0;i<totCells;i++)
              tempptr=Number(tempptr);
                
              //extracting block number
+             //resetting array
+             for(let j=tempptr+1;j<9;j++)
+             {
+                 temp[j]=-1;
+             }             
+             for(let k=0;k<9;k++)
+             {
+                 arr[k]=-1;
+             }
+             for(let k=0;k<=tempptr;k++)
+             {
+                 if(k%2==0)
+                 {
+                 arr[temp[k]]=3;
+                 }
+                 else
+                 {
+                 arr[temp[k]]=5;
+                 }
+             }
              
            
              for(let i=tempptr+1;i<9;i++)
@@ -94,7 +134,7 @@ for( let i=0;i<totCells;i++)
                 let tempBlock=document.querySelector(target).textContent;
                 tempBlock=tempBlock[tempBlock.length-2];
                 tempBlock=Number(tempBlock);
-                alert(tempBlock);
+                // alert(tempBlock);
                 document.querySelectorAll(".cell")[tempBlock].innerHTML="";
                 
                 

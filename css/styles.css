@@ -1,6 +1,9 @@
 h1{
     font-size: 5.5rem;
     text-align: center;
+    background-color: rosybrown;
+    color: white
+    
 }
 
 /* Class selectors  */
@@ -9,12 +12,16 @@ h1{
     height: 100px;
     border: 1px solid;
     font-size: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .playingBoard{
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 300px;
     margin: 50px auto;
+    background-color: beige;
 } 
 .output{
     display: flex;
