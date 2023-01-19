@@ -24,10 +24,40 @@ for( let i=0;i<totCells;i++)
         temp[cur]=i;
         document.querySelector(".displayMoves").insertAdjacentHTML("beforeend",text);
         //button created
-        tempclass=".move"+cur
+
+        let tempclass=".move"+cur;
+        
         document.querySelector(tempclass).addEventListener("click",function()
         {
-        alert("buttonclicked");
+             //reset back to previous moves
+             let tempptr=tempclass[tempclass.length-1];
+             tempptr=Number(tempptr);
+               
+             //extracting block number
+             
+           
+             for(let i=tempptr+1;i<9;i++)
+             {
+                let target=".move"+i;
+              //  alert(target); 
+                
+                let tempBlock=document.querySelector(target).textContent;
+                tempBlock=tempBlock[tempBlock.length-2];
+                tempBlock=Number(tempBlock);
+                alert(tempBlock);
+                document.querySelectorAll(".cell")[tempBlock].innerHTML="";
+                
+                
+                
+                
+                document.querySelector(target).innerHTML="";   //removing buttons
+               
+                   
+            }
+
+
+             //buttons deleted
+
         });
         
         cur++;
@@ -42,11 +72,70 @@ for( let i=0;i<totCells;i++)
         temp[cur]=i;
         document.querySelector(".displayMoves").insertAdjacentHTML("beforeend",text)
         //button created
-        tempclass=".move"+cur
+        let tempclass=".move"+cur;
+        
+       
+        
         document.querySelector(tempclass).addEventListener("click",function()
         {
-        alert("buttonclicked");
+
+
+            let tempptr=tempclass[tempclass.length-1];
+             tempptr=Number(tempptr);
+               
+             //extracting block number
+             
+           
+             for(let i=tempptr+1;i<9;i++)
+             {
+                let target=".move"+i;
+               // alert(target); 
+                
+                let tempBlock=document.querySelector(target).textContent;
+                tempBlock=tempBlock[tempBlock.length-2];
+                tempBlock=Number(tempBlock);
+                alert(tempBlock);
+                document.querySelectorAll(".cell")[tempBlock].innerHTML="";
+                
+                
+                
+                
+                document.querySelector(target).innerHTML="";   //removing buttons
+               
+                   
+            }
+
+
+
+
+
+
+            /*
+            //reset back to previous moves
+            let tempptr=tempclass[tempclass.length-1];
+            tempptr=Number(tempptr);
+
+            
+            // 
+
+             for(let i=tempptr+1;i<9;i++)
+             {
+                let target=".move"+i;
+                document.querySelector(target).innerHTML="";
+                
+                // document.querySelectorAll(".cell")[tempBlock].innerHTML="";
+                //extracting block number
+                
+                let tempBlock=document.querySelector(target).textContent;
+                // alert(tempBlock);
+                tempBlock=tempBlock[tempBlock.length-2];
+                // alert(tempBlock);
+                // tempBlock=Number(tempBlock);
+                // document.querySelectorAll(".cell")[tempBlock].innerHTML="";
+            }
+            */
         });
+        
         cur++;
     }
     
