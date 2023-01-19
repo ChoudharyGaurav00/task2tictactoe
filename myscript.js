@@ -4,6 +4,8 @@ var temp=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
 var totCells=document.querySelectorAll(".cell").length;
 
 
+
+// for tracking game playing area work
 for( let i=0;i<totCells;i++)
 {
     document.querySelectorAll(".cell")[i].addEventListener("click",function()
@@ -15,9 +17,9 @@ for( let i=0;i<totCells;i++)
         document.querySelectorAll(".cell")[i].innerHTML="O";
         arr[i]=3;
         
-        // document.querySelector(".displayMoves").insertAdjacentElement()
+        // moves button creation
         text="<p> move "+(cur)+" on block "+i+" </p>";
-        text="<button class=move"+cur+" movebutton " +"/>" +text+"</button>";
+        text="<button class= move"+(cur+" btn ")+"/>" +text+"</button>";
         
 
         temp[cur]=i;
@@ -25,10 +27,10 @@ for( let i=0;i<totCells;i++)
         //button created
 
         let tempclass=".move"+cur;
-        
+        // adding event listener to move buttons so that we can go to previous moves
         document.querySelector(tempclass).addEventListener("click",function()
         {
-             //reset back to previous moves
+             //getting class of current button
              let tempptr=tempclass[tempclass.length-1];
              tempptr=Number(tempptr);
                
@@ -54,29 +56,29 @@ for( let i=0;i<totCells;i++)
                 arr[temp[k]]=5;
                 }
             }
-            // 
+            // array resetted
            
              for(let i=tempptr+1;i<9;i++)
              {
                 let target=".move"+i;
-              //  alert(target); 
                 
+
+                // removing cell moves 
                 let tempBlock=document.querySelector(target).textContent;
                 tempBlock=tempBlock[tempBlock.length-2];
                 tempBlock=Number(tempBlock);
-                // alert(tempBlock);
                 document.querySelectorAll(".cell")[tempBlock].innerHTML="";
+                // cell moves removed
                 
                 
                 
-                
-                document.querySelector(target).innerHTML="";   //removing buttons
-               
+                let tempButton =document.querySelector(target)   //removing buttons
+                tempButton.remove();
                    
             }
 
 
-             //buttons deleted
+             
 
         });
         
@@ -130,19 +132,20 @@ for( let i=0;i<totCells;i++)
              for(let i=tempptr+1;i<9;i++)
              {
                 let target=".move"+i;
-               // alert(target); 
                 
+
+                // removing cell moves 
                 let tempBlock=document.querySelector(target).textContent;
                 tempBlock=tempBlock[tempBlock.length-2];
                 tempBlock=Number(tempBlock);
-                // alert(tempBlock);
                 document.querySelectorAll(".cell")[tempBlock].innerHTML="";
+                // cell moves removed
                 
                 
                 
+                let tempButton =document.querySelector(target)   //removing buttons
+                tempButton.remove();
                 
-                document.querySelector(target).innerHTML="";   //removing buttons
-               
                    
             }
 
